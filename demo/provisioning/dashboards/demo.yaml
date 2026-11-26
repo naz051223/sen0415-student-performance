@@ -1,0 +1,7 @@
+apiVersion: 1
+providers:
+  - name: Student Performance demo
+    type: file
+    allowUiUpdates: true
+    options:
+      path: /opt/student-performance/demo/dashboard

@@ -1,0 +1,27 @@
+{
+  "type": "panel",
+  "name": "Student Performance",
+  "id": "kultur-studentperformance-panel",
+  "info": {
+    "description": "Öğrenci puanlarının ve başarı dağılımının özeti",
+    "author": {
+      "name": "SEN0415 Proje Grubu"
+    },
+    "version": "1.0.0",
+    "updated": "2026-11-25",
+    "keywords": [
+      "education",
+      "scores"
+    ],
+    "logos": {
+      "small": "",
+      "large": ""
+    },
+    "screenshots": [],
+    "links": []
+  },
+  "dependencies": {
+    "grafanaDependency": ">=11.0.0",
+    "plugins": []
+  }
+}

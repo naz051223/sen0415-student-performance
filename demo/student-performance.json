@@ -1,0 +1,118 @@
+{
+  "uid": "student-performance",
+  "title": "Student Performance",
+  "schemaVersion": 41,
+  "editable": true,
+  "version": 2,
+  "tags": [
+    "SEN0415"
+  ],
+  "time": {
+    "from": "now-5m",
+    "to": "now"
+  },
+  "panels": [
+    {
+      "id": 1,
+      "type": "kultur-studentperformance-panel",
+      "title": "Sınıf sonuçları",
+      "gridPos": {
+        "x": 0,
+        "y": 0,
+        "w": 14,
+        "h": 15
+      },
+      "datasource": {
+        "type": "grafana-testdata-datasource",
+        "uid": "student-performance-demo"
+      },
+      "targets": [
+        {
+          "refId": "A",
+          "datasource": {
+            "type": "grafana-testdata-datasource",
+            "uid": "student-performance-demo"
+          },
+          "scenarioId": "csv_content",
+          "csvContent": "student,score\nÖğrenci A,87\nÖğrenci B,72\nÖğrenci C,58\nÖğrenci D,94\nÖğrenci E,43\nÖğrenci F,65\nÖğrenci G,76\nÖğrenci H,60"
+        }
+      ],
+      "options": {
+        "studentNames": "Huriye Kayadelen, Tuba Nazlı İpekyüz",
+        "passMark": 60
+      }
+    },
+    {
+      "gridPos": {
+        "h": 15,
+        "w": 10,
+        "x": 14,
+        "y": 0
+      },
+      "description": "Kurgusal haftalık sınıf notları",
+      "targets": [
+        {
+          "fromWeek": 1,
+          "datasource": {
+            "uid": "student-score-data",
+            "type": "kultur-studentscore-datasource"
+          },
+          "refId": "A",
+          "toWeek": 8
+        }
+      ],
+      "id": 2,
+      "title": "Haftalık ortalama tahmini",
+      "datasource": {
+        "uid": "student-score-data",
+        "type": "kultur-studentscore-datasource"
+      },
+      "type": "kultur-studenttrend-panel"
+    },
+    {
+      "targets": [
+        {
+          "refId": "A",
+          "channel": "plugin/testdata/random-2s-stream",
+          "datasource": {
+            "uid": "-- Grafana --",
+            "type": "grafana"
+          },
+          "queryType": "measurements"
+        }
+      ],
+      "type": "timeseries",
+      "id": 3,
+      "gridPos": {
+        "h": 9,
+        "w": 24,
+        "x": 0,
+        "y": 15
+      },
+      "title": "Canlı sinyal (simülasyon)",
+      "fieldConfig": {
+        "defaults": {
+          "custom": {
+            "showPoints": "always"
+          }
+        },
+        "overrides": []
+      },
+      "description": "Grafana Live WebSocket akışı, yaklaşık iki saniyede bir güncellenir.",
+      "datasource": {
+        "uid": "-- Grafana --",
+        "type": "grafana"
+      },
+      "options": {
+        "legend": {
+          "placement": "bottom",
+          "showLegend": true,
+          "displayMode": "table",
+          "calcs": [
+            "lastNotNull"
+          ]
+        }
+      }
+    }
+  ]
+}

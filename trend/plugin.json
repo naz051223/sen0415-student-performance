@@ -1,0 +1,27 @@
+{
+  "type": "panel",
+  "name": "Student Performance Trend",
+  "id": "kultur-studenttrend-panel",
+  "info": {
+    "description": "Haftalık sınıf ortalaması tahmini ve geriye dönük doğrulama",
+    "author": {
+      "name": "Huriye Kayadelen, Tuba Nazlı İpekyüz"
+    },
+    "version": "1.0.0",
+    "updated": "2026-11-25",
+    "keywords": [
+      "forecast",
+      "education"
+    ],
+    "logos": {
+      "small": "",
+      "large": ""
+    },
+    "screenshots": [],
+    "links": []
+  },
+  "dependencies": {
+    "grafanaDependency": ">=11.0.0",
+    "plugins": []
+  }
+}

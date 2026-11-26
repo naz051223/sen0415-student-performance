@@ -1,0 +1,5 @@
+dist/
+dist-trend/
+dist-score-data/
+node_modules/
+.grafana-local/

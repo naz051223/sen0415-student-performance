@@ -1,0 +1,29 @@
+{
+  "type": "datasource",
+  "name": "Student Score Data",
+  "id": "kultur-studentscore-datasource",
+  "metrics": true,
+  "backend": false,
+  "info": {
+    "description": "Kurgusal öğrenci puanlarını haftaya göre sorgular",
+    "author": {
+      "name": "Huriye Kayadelen, Tuba Nazlı İpekyüz"
+    },
+    "version": "1.0.0",
+    "updated": "2026-11-25",
+    "keywords": [
+      "education",
+      "json"
+    ],
+    "logos": {
+      "small": "",
+      "large": ""
+    },
+    "screenshots": [],
+    "links": []
+  },
+  "dependencies": {
+    "grafanaDependency": ">=11.0.0",
+    "plugins": []
+  }
+}

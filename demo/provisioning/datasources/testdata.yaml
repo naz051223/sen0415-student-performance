@@ -1,0 +1,12 @@
+apiVersion: 1
+datasources:
+  - name: Student Performance TestData
+    type: grafana-testdata-datasource
+    uid: student-performance-demo
+    access: proxy
+    editable: true
+  - name: Student Score Data
+    type: kultur-studentscore-datasource
+    uid: student-score-data
+    access: proxy
+    editable: true
