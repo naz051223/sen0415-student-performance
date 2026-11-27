@@ -1,5 +1,5 @@
 ﻿export default {
   roots: ['<rootDir>/tests'],
-  testMatch: ['<rootDir>/tests/*.test.mjs'],
+  testMatch: ['**/*.test.mjs'],
   transform: {},
 };
