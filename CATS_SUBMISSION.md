@@ -2,18 +2,18 @@
 
 **Proje** · Student Performance Analytics
 **Ders** · SEN0415 Advanced Web Programming, İstanbul Kültür Üniversitesi
-**Grup üyeleri** · Huriye Kayadelen ve Tuba Nazlı İpekyüz
+**Grup üyeleri** · Huriye Kayadelen — 2200005795 ve Tuba Nazlı İpekyüz — 2200004323
 
 **Developed by Huriye Kayadelen & Tuba Nazlı İpekyüz**
 
-Huriye Kayadelen ve Tuba Nazlı İpekyüz, CATS’a aynı `SEN0415_Huriye_Nazli_Final_Submission.zip` dosyasını yüklemeli ve kendi tesliminde iki grup üyesinin de adını belirtmelidir. [GitHub grup deposu](https://github.com/naz051223/sen0415-student-performance)
+[GitHub grup deposu](https://github.com/naz051223/sen0415-student-performance)
 
 ## Grup üyeleri ve iş dağılımı
 
 | Öğrenci | Geliştirdiği eklenti ve görevleri |
 | --- | --- |
-| **Huriye Kayadelen** | **Student Performance** panel eklentisi. Öğrenci puanlarının görselleştirilmesi, ortalama ve başarı oranı, geçme barajı ayarı, filtreleme, sıralama, medyan, popülasyon standart sapması, puan dağılımı, en yüksek ve en düşük üç puan, açıklanabilir K-means, What-If Simulator ve duyarlı ana panel yerleşimi. |
-| **Tuba Nazlı İpekyüz** | **Student Score Data** veri kaynağı ve **Student Performance Trend** panel eklentileri. JSON veri kaynağı ile CSV dashboard entegrasyonu, hafta aralığı ve veri kaynağı işlemleri, doğrusal regresyon, geçmiş tahmin hatası karşılaştırması, Grafana Live, otomatik testler ve demo hazırlığı. |
+| **Huriye Kayadelen — 2200005795** | **Student Performance** panel eklentisi. Öğrenci puanlarının görselleştirilmesi, ortalama ve başarı oranı, geçme barajı ayarı, filtreleme, sıralama, medyan, popülasyon standart sapması, puan dağılımı, en yüksek ve en düşük üç puan, açıklanabilir K-means, What-If Simulator ve duyarlı ana panel yerleşimi. |
+| **Tuba Nazlı İpekyüz — 2200004323** | **Student Score Data** veri kaynağı ve **Student Performance Trend** panel eklentileri. JSON veri kaynağı ile CSV dashboard entegrasyonu, hafta aralığı ve veri kaynağı işlemleri, doğrusal regresyon, geçmiş tahmin hatası karşılaştırması, Grafana Live, otomatik testler ve demo hazırlığı. |
 
 ## Eklentiler ve başlıca özellikler
 
@@ -36,9 +36,18 @@ K-means grupları mevcut puanları betimler. Grafana Live grafiği WebSocket üz
 | GitHub | **Uygulandı.** Grup deposu ve commit geçmişi, kaynak kodu, entegrasyon ve teslim güncellemesini belgeliyor. |
 | Dokümantasyon ve kod kalitesi | **Uygulandı.** Ayrıntılı İngilizce README, kurulum adımları, TypeScript, ESLint ve testler. |
 | WebSocket | **Uygulandı.** Grafana Live grafiğinde zaman damgalı ölçümler doğrulandı. |
-| YouTube demosu | **Yayımlanmadı.** Güncel MP4 arşivdedir. |
+| YouTube demosu | **Doğrulanmadı.** Oynatılması doğrulanan MP4 arşivdedir. |
 | Testler ve UI/UX | **Uygulandı.** Üç eklenti için Jest, uyarlanabilir kartlar ve klavyeyle ayarlanabilen simülasyon kontrolü. |
-| Very Big Bonus | **Doğrulanmadı.** Ölçütler ve uygunluk teyit edilmedi. |
+| Very Big Bonus | **Destekleyici kanıt eklendi.** Uygunluk ve puan değerlendirmesi öğretim elemanına aittir. |
+
+### Very Big Bonus — Supporting Evidence
+
+- **Proje kalitesi.** Üç eklenti, öğretim elemanının sınıf sonuçlarını incelemesini, baraj altındaki kayıtları süzmesini ve farklı barajların etkisini karşılaştırmasını sağlar.
+- **AI özelliklerinin özgün katkısı.** K-means mevcut puanları grup ortalaması, üye sayısı ve öğrenci listesiyle betimler. Ayrı Trend paneli haftalık sınıf ortalamasını tahmin eder.
+- **Araştırma değeri.** Genişleyen geçmiş penceresiyle her kontrol yalnızca önceki haftaları kullanır. Beş kontrolde ortalama mutlak hata regresyon için 0,97, son gözlem yöntemi için 2,6 puandır. Kurgusal veri kümesi ve kısa hafta geçmişi, sonuçların başka sınıflara genellenmesini sınırlar.
+- **Geliştirme yaklaşımı.** Analiz işlevleri arayüzden ayrıdır. Kaynak eklentisi Grafana DataFrame döndürür. Kilitli bağımlılıklar, 12 Jest testi ve tarayıcı kontrolleri sonuçların yeniden üretilmesini sağlar.
+
+Daha uzun veri geçmişi, ayrı bir değerlendirme dönemi ve tahmin belirsizliği aralıkları yöntemin değerlendirilmesini güçlendirebilir. [README’deki ayrıntılı kanıtlar](README.md#very-big-bonus--supporting-evidence)
 
 ## Kurulum ve doğrulama
 
@@ -46,7 +55,7 @@ K-means grupları mevcut puanları betimler. Grafana Live grafiği WebSocket üz
 2. [README](README.md) içindeki Windows veya Docker Compose adımlarıyla Grafana’yı başlatın. Elle kurulum için üç eklenti kimliği, kaynak UID’leri ve dashboard içe aktarma adımları README’de yer alır.
 3. `npm run typecheck`, `npm run lint` ve `npm test` ile kontrolleri tekrar çalıştırabilirsiniz.
 
-TypeScript, ESLint, **12 Jest testi** ve üç üretim derlemesi başarılıdır. Grafana OSS 13.3.1’de üç eklentinin yüklenmesi ve dashboard JSON içe aktarma doğrulandı. Tarayıcı kontrolleri CSV ve JSON sorgularını, hafta filtresini, K-means gruplarını, simülasyon ve sıfırlamayı, Trend tahminini, Live ölçümlerini ve iki panelde görünen geliştirici adlarını kapsadı. Docker Compose yapılandırması doğrulandı. Çalışma zamanı kontrolleri Windows Grafana ile yapıldı.
+TypeScript, ESLint, **12 Jest testi** ve üç üretim derlemesi başarılıdır. Grafana OSS 13.3.1’de üç eklentinin yüklenmesi ve dashboard JSON içe aktarma doğrulandı. Tarayıcı kontrolleri CSV ve JSON sorgularını, hafta filtresini, K-means gruplarını, simülasyon ve sıfırlamayı, Trend tahminini, Live ölçümlerini ve iki panelde görünen geliştirici adlarını kapsadı. 390 piksel görünüm, klavyeyle baraj ayarı ve geçerli puan içermeyen veri kümesi de tarayıcıda doğrulandı. Docker Compose yapılandırması doğrulandı. Çalışma zamanı kontrolleri Windows Grafana ile yapıldı.
 
 ## Ekran görüntüleri ve demo
 

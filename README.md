@@ -7,7 +7,7 @@
 | Course | SEN0415 Advanced Web Programming |
 | University | Istanbul Kültür University |
 | Project | Student Performance Analytics |
-| Group members | Huriye Kayadelen and Tuba Nazlı İpekyüz |
+| Group members | Huriye Kayadelen — 2200005795 and Tuba Nazlı İpekyüz — 2200004323 |
 
 **Developed by Huriye Kayadelen & Tuba Nazlı İpekyüz**
 
@@ -51,6 +51,8 @@ Grafana passes the query results to the panels as DataFrames. The custom panels 
 | Grade distribution | Counts scores in four bands, 0–<50, 50–<70, 70–<85, and 85–100. The counts show where most grades fall. |
 | Top and bottom students | Uses the existing score ranking to show up to three students at each end of the class results. |
 | Responsive design | Metric and analysis cards wrap at narrower widths. The table drops inline meters when space is limited and keeps names, values, and statuses readable. |
+
+The simulator slider has an accessible name and responds to keyboard input. The **End** key moves the slider to 100. **Reset Simulation** returns it to the official passing mark. At a 390 px viewport, the layout wrapped without horizontal overflow in the panel, and the simulator remained operable.
 
 The panel accepts finite numeric grades between 0 and 100, including both endpoints. It reports excluded invalid scores, uses a fallback label for a missing student name, and shows a message for an empty or failed query.
 
@@ -169,18 +171,29 @@ The Jest suites cover grade validation and filtering, summary calculations, clus
 | Documentation | Implemented | English README, setup and verification steps, CATS instructions, and task distribution. |
 | Good code | Implemented | Typed analysis functions, Grafana plugin boundaries, lint and type checks, and targeted tests. |
 | WebSocket | Implemented | The Live chart received multiple timestamped TestData publications through Grafana Live. |
-| YouTube demo | Unavailable | The new MP4 is included in the submission. A YouTube link is pending. |
+| YouTube demo | Not verified | The verified MP4 is included in the submission. |
 | Tests | Implemented | 12 passing tests across the three plugins and separate browser integration checks. |
 | UI/UX | Implemented | Responsive statistics, results ordered by score, a keyboard-operable slider, and a provisioned demo dashboard. |
-| Very Big Bonus | Not verified | The scoring criteria and eligibility have not been confirmed. |
+| Very Big Bonus | Supporting evidence | The following section addresses the four review criteria. The instructor determines eligibility and scoring. |
+
+### Very Big Bonus — Supporting Evidence
+
+| Review criterion | Evidence in this project |
+| --- | --- |
+| Overall project quality | The three Grafana plugins turn separate grade queries into a class overview, a weekly forecast, and a configurable data source. An instructor can review below-threshold rows, inspect grade groups, and compare passing marks before changing the official threshold. |
+| Originality of the AI features | The contribution is how established methods are combined in the same teaching workflow. K-means describes current grade similarity and explains each group through its average, size, and members. The Trend panel answers a separate question about a future weekly class average. |
+| Research value of the AI methodology | The historical comparison uses an expanding window. Starting with three observed weeks, both methods predict the next observed week using only earlier data. Mean absolute error lets the instructor compare regression with the last-observation baseline in grade points. In the demo, the five checks give 0.97 points for regression and 2.6 for the baseline. |
+| Development approach and code quality | The main panel separates pure analysis functions from the UI. The week-filtered JSON source returns Grafana DataFrames, and the Trend plugin handles forecasting independently from the Live stream. The locked build, 12 Jest tests, and recorded Grafana checks make the results reproducible. |
+
+The demo uses fictional records and eight observed weeks. The K-means centers summarize one variable, the grade. They can shift as the class dataset changes and cannot explain why a student scored at a particular level. The weekly fit assumes a linear trend and the five historical checks are too few to establish generalization. A longer history, a separate evaluation period, and uncertainty intervals would strengthen the evidence. The instructor determines whether the project qualifies for the bonus.
 
 ## 12. Group Members and Task Distribution
 
-### Huriye Kayadelen
+### Huriye Kayadelen — 2200005795
 
 Huriye developed the **Student Performance** panel plugin. Her assigned work included student grade visualization and calculations, passing-grade settings, filtering and sorting, and the responsive main-panel layout. The panel includes median and population standard deviation, grade distribution, top and bottom rankings, explainable K-means clustering, and the What-If Simulator.
 
-### Tuba Nazlı İpekyüz
+### Tuba Nazlı İpekyüz — 2200004323
 
 Tuba Nazlı developed the **Student Score Data** source plugin and the **Student Performance Trend** panel plugin. Her assigned work included the JSON source and CSV dashboard integration, week filtering and source operations, weekly linear regression, historical prediction-error comparison, Grafana Live integration, automated testing, and demo preparation.
 
@@ -207,4 +220,4 @@ The demo uses a small, fictional dataset. TestData CSV is suitable for demonstra
 
 K-means uses a single numeric grade and describes the supplied records. The weekly estimate is based on a short history of class averages. Future work could add larger historical samples, uncertainty ranges, multi-assessment filters, and a comparison against forecasts on a separate evaluation dataset.
 
-Each group member should submit the same final archive to CATS and identify both students. The archive contains the three plugin sources and builds, dashboard JSON, tests, task distribution, screenshots, and the final demo. [CATS submission notes](CATS_SUBMISSION.md)
+The archive contains the three plugin sources and builds, dashboard JSON, tests, task distribution, screenshots, and the final demo. [CATS submission notes](CATS_SUBMISSION.md)
