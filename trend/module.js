@@ -66,7 +66,7 @@ define(['react', '@grafana/data'], function (React, GrafanaData) {
   function TrendPanel({ data, height, width }) {
     const points = readWeeks(data.series);
     const style = { height, width, overflow: 'auto', padding: 14, boxSizing: 'border-box' };
-    const footer = h('small', null, 'Geliştirenler: Huriye Kayadelen, Tuba Nazlı İpekyüz');
+    const footer = h('small', null, 'Developed by Huriye Kayadelen & Tuba Nazlı İpekyüz');
     if (data.state === 'Error' || data.error) {
       return h('section', { style }, h('p', { role: 'alert' }, 'Haftalık puan sorgusu çalışmadı.'), footer);
     }

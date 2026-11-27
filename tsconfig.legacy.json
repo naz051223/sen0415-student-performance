@@ -1,0 +1,7 @@
+﻿{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "noImplicitAny": false
+  },
+  "include": ["trend/module.js", "score-data/module.js", "plugin-types.d.ts"]
+}

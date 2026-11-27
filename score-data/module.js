@@ -1,4 +1,4 @@
-define(['react', '@grafana/data', '@grafana/runtime'], function (React, data, runtime) {
+﻿define(['react', '@grafana/data', '@grafana/runtime'], function (React, data, runtime) {
   'use strict';
 
   const h = React.createElement;
@@ -45,7 +45,7 @@ define(['react', '@grafana/data', '@grafana/runtime'], function (React, data, ru
         const rows = await this.loadScores();
         return { status: 'success', message: rows.length + ' örnek puan okundu.' };
       } catch (error) {
-        return { status: 'error', message: 'Örnek notlar okunamadı: ' + error.message };
+        return { status: 'error', message: 'Örnek notlar okunamadı: ' + (error instanceof Error ? error.message : String(error)) };
       }
     }
   }
@@ -55,7 +55,7 @@ define(['react', '@grafana/data', '@grafana/runtime'], function (React, data, ru
       [['fromWeek', 'İlk hafta'], ['toWeek', 'Son hafta']].map(([key, label]) =>
         h('label', { key }, label + ' ',
           h('input', { type: 'number', min: 1, defaultValue: query[key] ?? '',
-            onBlur: (event) => {
+            onBlur: /** @param {import('react').FocusEvent<HTMLInputElement>} event */ (event) => {
               const value = event.currentTarget.valueAsNumber;
               onChange({ ...query, [key]: Number.isNaN(value) ? undefined : value });
               onRunQuery();

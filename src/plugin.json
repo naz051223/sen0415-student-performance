@@ -3,12 +3,12 @@
   "name": "Student Performance",
   "id": "kultur-studentperformance-panel",
   "info": {
-    "description": "Öğrenci puanlarının ve başarı dağılımının özeti",
+    "description": "Öğrenci puanları, gelişmiş istatistikler, K-means ve geçme barajı simülasyonu",
     "author": {
-      "name": "SEN0415 Proje Grubu"
+      "name": "Huriye Kayadelen, Tuba Nazlı İpekyüz"
     },
-    "version": "1.0.0",
-    "updated": "2026-11-25",
+    "version": "1.1.0",
+    "updated": "2026-11-27",
     "keywords": [
       "education",
       "scores"

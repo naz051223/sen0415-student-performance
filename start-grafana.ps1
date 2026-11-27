@@ -5,10 +5,13 @@ param(
     [ValidateRange(1024, 65535)]
     [int]$Port = 3100,
 
-    [string]$DataDirectory = (Join-Path $PSScriptRoot '.grafana-local')
+    [string]$DataDirectory
 )
 
 $ErrorActionPreference = 'Stop'
+if (!$DataDirectory) {
+    $DataDirectory = Join-Path $PSScriptRoot '.grafana-local'
+}
 $grafanaRoot = (Resolve-Path -LiteralPath $GrafanaHome).Path
 $server = Join-Path $grafanaRoot 'bin/grafana.exe'
 $legacyServer = Join-Path $grafanaRoot 'bin/grafana-server.exe'

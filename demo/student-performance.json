@@ -3,7 +3,7 @@
   "title": "Student Performance",
   "schemaVersion": 41,
   "editable": true,
-  "version": 2,
+  "version": 3,
   "tags": [
     "SEN0415"
   ],
@@ -20,7 +20,7 @@
         "x": 0,
         "y": 0,
         "w": 14,
-        "h": 15
+        "h": 34
       },
       "datasource": {
         "type": "grafana-testdata-datasource",
@@ -40,7 +40,8 @@
       "options": {
         "studentNames": "Huriye Kayadelen, Tuba Nazlı İpekyüz",
         "passMark": 60
-      }
+      },
+      "description": "Puan istatistikleri, açıklanabilir K-means grupları ve What-If Simulator"
     },
     {
       "gridPos": {
@@ -84,9 +85,9 @@
       "type": "timeseries",
       "id": 3,
       "gridPos": {
-        "h": 9,
-        "w": 24,
-        "x": 0,
+        "h": 19,
+        "w": 10,
+        "x": 14,
         "y": 15
       },
       "title": "Canlı sinyal (simülasyon)",
