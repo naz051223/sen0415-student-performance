@@ -1,58 +1,66 @@
-﻿# SEN0415 CATS teslim metni
+﻿# SEN0415 CATS Teslimi
 
-**Proje** · Student Performance — Grafana
+**Proje** · Student Performance Analytics
+**Ders** · SEN0415 Advanced Web Programming, İstanbul Kültür Üniversitesi
+**Grup üyeleri** · Huriye Kayadelen ve Tuba Nazlı İpekyüz
 
 **Developed by Huriye Kayadelen & Tuba Nazlı İpekyüz**
 
-**Grup üyeleri** · Huriye Kayadelen ve Tuba Nazlı İpekyüz
+Huriye Kayadelen ve Tuba Nazlı İpekyüz, CATS’a aynı `SEN0415_Huriye_Nazli_Final_Submission.zip` dosyasını yüklemeli ve kendi tesliminde iki grup üyesinin de adını belirtmelidir. [GitHub grup deposu](https://github.com/naz051223/sen0415-student-performance)
 
-[GitHub grup projesi](https://github.com/naz051223/sen0415-student-performance)
+## Grup üyeleri ve iş dağılımı
 
-## İş dağılımı
-
-- **Huriye Kayadelen** · Student Performance panel eklentisi, puan hesapları, filtreleme ve sıralama, istatistikler ve puan dağılımı, açıklamalı K-means kümeleme ve What-If Simulator.
-- **Tuba Nazlı İpekyüz** · Student Score Data veri kaynağı eklentisi ve Student Performance Trend panel eklentisi, doğrusal regresyon, geçmiş tahmin hatası karşılaştırması, Grafana Live entegrasyonu, otomatik testler ve demo hazırlığı.
-
-## Uygulamadaki bonus özellikleri
-
-| Kategori | Projedeki karşılığı |
+| Öğrenci | Geliştirdiği eklenti ve görevleri |
 | --- | --- |
-| Veri kaynağı kullanımı | Grafana TestData üzerinden CSV sorgusu ve haftalık puanlar için Student Score Data. |
-| Veri kaynağı işlemleri | CSV ve JSON okuma, dahilî ilk/son hafta filtrelemesi, bağlantı testi ve hata iletileri. |
-| Özel veri kaynağı | Student Score Data, `week` ve `score` alanlarını DataFrame olarak döndüren Grafana eklentisi. |
-| Panel işlemleri | Geçme barajı, sıralama ve filtre, puan dağılımı, medyan, popülasyon standart sapması, en yüksek ve en düşük üç kayıt, başarı oranı simülasyonu. |
-| Ek panel | Student Performance Trend ile haftalık sınıf ortalaması tahmini ve geçmiş hata karşılaştırması. |
-| AI | Puanlara dayalı açıklanabilir K-means kümeleme ve haftalık doğrusal regresyon. |
-| GitHub | Grup deposu ve entegrasyon dalı. |
-| Dokümantasyon | README, kurulum, dashboard içe aktarma ve bu teslim metni. |
-| Kod kalitesi | TypeScript analiz modülü, test edilebilir hesaplamalar ve ESLint. |
-| WebSocket | Grafana Live ile simüle edilmiş zaman serisi. |
-| YouTube demo | Güncel demo arşivde video dosyası olarak yer alır. YouTube bağlantısı bulunmuyor. |
-| Testler | Ana panel, Trend ve veri kaynağı için Jest senaryoları. |
-| UI/UX | Dar panellere uyarlanan kartlar, klavyeyle değiştirilebilir simülasyon barajı ve hazır dashboard. |
-| Very Big Bonus | Ölçütleri doğrulanmadığı için puan talep edilmiyor. |
+| **Huriye Kayadelen** | **Student Performance** panel eklentisi. Öğrenci puanlarının görselleştirilmesi, ortalama ve başarı oranı, geçme barajı ayarı, filtreleme, sıralama, medyan, popülasyon standart sapması, puan dağılımı, en yüksek ve en düşük üç puan, açıklanabilir K-means, What-If Simulator ve duyarlı ana panel yerleşimi. |
+| **Tuba Nazlı İpekyüz** | **Student Score Data** veri kaynağı ve **Student Performance Trend** panel eklentileri. JSON veri kaynağı ile CSV dashboard entegrasyonu, hafta aralığı ve veri kaynağı işlemleri, doğrusal regresyon, geçmiş tahmin hatası karşılaştırması, Grafana Live, otomatik testler ve demo hazırlığı. |
 
-## Teslim dosyaları
+## Eklentiler ve başlıca özellikler
 
-- `src/`, `trend/`, `score-data/` ve `tests/`
-- `dist/`, `dist-trend/` ve `dist-score-data/`
-- `demo/student-performance.json` ve ilgili provisioning dosyaları
-- `README.md` ve `CATS_SUBMISSION.md`
-- `demo/evidence/` altında Grafana ekran görüntüleri, test ve derleme çıktısı ve güncel demo
+| Eklenti | Kimlik | İşlev |
+| --- | --- | --- |
+| **Student Performance** | `kultur-studentperformance-panel` | TestData CSV puanlarını gösterir. Sınıf istatistiklerini hesaplar, öğrencileri puan benzerliğine göre gruplar ve geçme barajı senaryolarını anlık karşılaştırır. |
+| **Student Performance Trend** | `kultur-studenttrend-panel` | Haftalık ortalamaları çıkarır. Doğrusal regresyon ve son gözlemin geçmiş hatalarını karşılaştırır, sonraki haftanın sınıf ortalamasını tahmin eder. |
+| **Student Score Data** | `kultur-studentscore-datasource` | Paketle gelen JSON puanlarını okur. İki sınır da dahil olacak şekilde hafta aralığını filtreler ve Grafana DataFrame döndürür. |
 
-## Çalıştırma kanıtları
+K-means grupları mevcut puanları betimler. Grafana Live grafiği WebSocket üzerinden ayrı bir simüle ölçüm akışı alır. Deneme puanları kurgusaldır.
 
-Grafana OSS 13.3.1 üzerinde iki özel panel ve özel veri kaynağı yüklendi. Dashboard otomatik yükleme ve JSON içe aktarma yoluyla açıldı. CSV sorgusu sekiz, özel kaynak bağlantı testi 16 örnek kayıt döndürdü. Tarayıcıda K-means sonuçları, simülasyon ve sıfırlama, haftalık filtre, 390 px görünüm ve canlı WebSocket ölçümleri doğrulandı.
+## Bonus özellikleri
+
+| Kategori | Durum ve kanıt |
+| --- | --- |
+| Veri kaynağı kullanımı ve işlemleri | **Uygulandı.** TestData CSV, paket içi JSON, hafta filtresi, DataFrame dönüşümü ve bağlantı testi. |
+| Özel veri kaynağı | **Uygulandı.** Student Score Data eklentisi. |
+| Panel işlemleri ve ek panel | **Uygulandı.** Puan tablosu, sınıf istatistikleri, baraj simülasyonu ve ayrı Trend paneli. |
+| AI | **Uygulandı.** Açıklamalı K-means ve doğrusal regresyonla haftalık sınıf ortalaması tahmini. |
+| GitHub | **Kısmen doğrulandı.** Grup deposu erişilebilir. Son sürümün yayımlanması için yazma yetkisi gerekiyor. |
+| Dokümantasyon ve kod kalitesi | **Uygulandı.** Ayrıntılı İngilizce README, kurulum adımları, TypeScript, ESLint ve testler. |
+| WebSocket | **Uygulandı.** Grafana Live grafiğinde zaman damgalı ölçümler doğrulandı. |
+| YouTube demosu | **Yayımlanmadı.** Güncel MP4 arşivdedir. |
+| Testler ve UI/UX | **Uygulandı.** Üç eklenti için Jest, uyarlanabilir kartlar ve klavyeyle ayarlanabilen simülasyon kontrolü. |
+| Very Big Bonus | **Doğrulanmadı.** Ölçütler ve uygunluk teyit edilmedi. |
+
+## Kurulum ve doğrulama
+
+1. Proje kökünde Node.js 24 ile `npm ci` ve `npm run build` çalıştırın.
+2. [README](README.md) içindeki Windows veya Docker Compose adımlarıyla Grafana’yı başlatın. Elle kurulum için üç eklenti kimliği, kaynak UID’leri ve dashboard içe aktarma adımları README’de yer alır.
+3. `npm run typecheck`, `npm run lint` ve `npm test` ile kontrolleri tekrar çalıştırabilirsiniz.
+
+TypeScript, ESLint, **12 Jest testi** ve üç üretim derlemesi başarılıdır. Grafana OSS 13.3.1’de üç eklentinin yüklenmesi ve dashboard JSON içe aktarma doğrulandı. Tarayıcı kontrolleri CSV ve JSON sorgularını, hafta filtresini, K-means gruplarını, simülasyon ve sıfırlamayı, Trend tahminini, Live ölçümlerini ve iki panelde görünen geliştirici adlarını kapsadı. Docker Compose yapılandırması doğrulandı. Çalışma zamanı kontrolleri Windows Grafana ile yapıldı.
+
+## Ekran görüntüleri ve demo
 
 | Dosya | İçerik |
 | --- | --- |
-| [01-dashboard.png](demo/evidence/01-dashboard.png) | İki geliştirici adı, sınıf istatistikleri, K-means ve canlı grafik. |
-| [02-what-if.png](demo/evidence/02-what-if.png) | 100 puanlık simülasyon barajında güncellenen başarı oranı ve yüzde puan farkı. |
-| [03-trend.png](demo/evidence/03-trend.png) | 9. hafta tahmini, geçmiş hata karşılaştırması ve geliştirici adları. |
-| [04-data-source.png](demo/evidence/04-data-source.png) | Özel veri kaynağı ayarları ve başarılı bağlantı testi. |
-| [05-responsive.png](demo/evidence/05-responsive.png) | 390 px genişlikte simülasyon kontrolleri. |
-| [06-week-filter.png](demo/evidence/06-week-filter.png) | Son hafta 6 olarak filtrelendiğinde 7. hafta tahmini. |
-| [07-tests-build.png](demo/evidence/07-tests-build.png) | TypeScript, ESLint, 12 Jest testi ve üç üretim çıktısının derleme sonuçları. |
-| [student-performance-demo.mp4](demo/evidence/student-performance-demo.mp4) | Çalışan Grafana dashboard’undan alınmış 72 saniyelik, Türkçe açıklamalı ekran kaydı. |
+| [01-main-panel.png](demo/evidence/screenshots/01-main-panel.png) | Ana panel ve iki geliştirici adı. |
+| [02-student-statistics.png](demo/evidence/screenshots/02-student-statistics.png) | Puanlar, sınıf istatistikleri, sıralama ve geçenler filtresi. |
+| [03-kmeans-clustering.png](demo/evidence/screenshots/03-kmeans-clustering.png) | Gruplar, üye sayıları, ortalamalar ve açıklama. |
+| [04-what-if-simulator.png](demo/evidence/screenshots/04-what-if-simulator.png) | Değiştirilen simülasyon barajı, iki başarı oranı ve yüzde puan farkı. |
+| [05-trend-prediction.png](demo/evidence/screenshots/05-trend-prediction.png) | Haftalık tahmin, iki yöntemin geçmiş hataları ve geliştirici adları. |
+| [06-data-source.png](demo/evidence/screenshots/06-data-source.png) | Özel veri kaynağı yapılandırması ve başarılı bağlantı testi. |
+| [07-live-data.png](demo/evidence/screenshots/07-live-data.png) | Zaman damgalı ölçümler alan Grafana Live grafiği. |
+| [08-tests-and-build.png](demo/evidence/screenshots/08-tests-and-build.png) | Çalıştırılan TypeScript, ESLint, Jest ve üretim derlemesi komutlarının çıktısı. |
 
-Docker Compose yapılandırması doğrulandı. Grafana çalışma zamanı kontrolleri taşınabilir Windows sürümünde yapıldı.
+Son demo, çalışan Grafana üzerinde kaydedilmiş 1 dakika 58 saniyelik H.264 MP4 dosyasıdır. İki geliştirici adı, öğrenci tablosu, baraj ve filtre seçenekleri, K-means, simülasyon, haftalık tahmin, veri kaynağı ve Live grafiği gösterilir. [SEN0415_Huriye_Nazli_Final_Demo.mp4](demo/evidence/SEN0415_Huriye_Nazli_Final_Demo.mp4)
+
+Arşivde üç eklentinin kaynak kodu ve üretim çıktıları, yapılandırma, dashboard JSON, otomatik testler, bu teslim metni, README ve güncel medya bulunur.
