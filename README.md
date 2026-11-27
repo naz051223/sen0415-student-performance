@@ -171,7 +171,7 @@ The Jest suites cover grade validation and filtering, summary calculations, clus
 | Documentation | Implemented | English README, setup and verification steps, CATS instructions, and task distribution. |
 | Good code | Implemented | Typed analysis functions, Grafana plugin boundaries, lint and type checks, and targeted tests. |
 | WebSocket | Implemented | The Live chart received multiple timestamped TestData publications through Grafana Live. |
-| YouTube demo | Not verified | The verified MP4 is included in the submission. |
+| YouTube demo | Published on YouTube | [Watch the final demo](https://youtu.be/IBee_j_KS1Y) |
 | Tests | Implemented | 12 passing tests across the three plugins and separate browser integration checks. |
 | UI/UX | Implemented | Responsive statistics, results ordered by score, a keyboard-operable slider, and a provisioned demo dashboard. |
 | Very Big Bonus | Supporting evidence | The following section addresses the four review criteria. The instructor determines eligibility and scoring. |

@@ -36,7 +36,7 @@ K-means grupları mevcut puanları betimler. Grafana Live grafiği WebSocket üz
 | GitHub | **Uygulandı.** Grup deposu ve commit geçmişi, kaynak kodu, entegrasyon ve teslim güncellemesini belgeliyor. |
 | Dokümantasyon ve kod kalitesi | **Uygulandı.** Ayrıntılı İngilizce README, kurulum adımları, TypeScript, ESLint ve testler. |
 | WebSocket | **Uygulandı.** Grafana Live grafiğinde zaman damgalı ölçümler doğrulandı. |
-| YouTube demosu | **Doğrulanmadı.** Oynatılması doğrulanan MP4 arşivdedir. |
+| YouTube demosu | **YouTube’da yayımlandı.** | [Final demoyu izle](https://youtu.be/IBee_j_KS1Y) |
 | Testler ve UI/UX | **Uygulandı.** Üç eklenti için Jest, uyarlanabilir kartlar ve klavyeyle ayarlanabilen simülasyon kontrolü. |
 | Very Big Bonus | **Destekleyici kanıt eklendi.** Uygunluk ve puan değerlendirmesi öğretim elemanına aittir. |
 
