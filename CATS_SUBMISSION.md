@@ -33,7 +33,7 @@ K-means grupları mevcut puanları betimler. Grafana Live grafiği WebSocket üz
 | Özel veri kaynağı | **Uygulandı.** Student Score Data eklentisi. |
 | Panel işlemleri ve ek panel | **Uygulandı.** Puan tablosu, sınıf istatistikleri, baraj simülasyonu ve ayrı Trend paneli. |
 | AI | **Uygulandı.** Açıklamalı K-means ve doğrusal regresyonla haftalık sınıf ortalaması tahmini. |
-| GitHub | **Kısmen doğrulandı.** Grup deposu erişilebilir. Son sürümün yayımlanması için yazma yetkisi gerekiyor. |
+| GitHub | **Uygulandı.** Grup deposu ve commit geçmişi, kaynak kodu, entegrasyon ve teslim güncellemesini belgeliyor. |
 | Dokümantasyon ve kod kalitesi | **Uygulandı.** Ayrıntılı İngilizce README, kurulum adımları, TypeScript, ESLint ve testler. |
 | WebSocket | **Uygulandı.** Grafana Live grafiğinde zaman damgalı ölçümler doğrulandı. |
 | YouTube demosu | **Yayımlanmadı.** Güncel MP4 arşivdedir. |

@@ -165,7 +165,7 @@ The Jest suites cover grade validation and filtering, summary calculations, clus
 | Panel operations | Implemented | Score bars, class statistics, table filtering and ordering, configurable threshold, and what-if analysis. |
 | Additional panel | Implemented | Student Performance Trend shows weekly predictions and historical errors. |
 | AI | Implemented | Grade similarity via K-means and class mean forecasts via linear regression, with visible summaries for both methods. |
-| GitHub | Partially verified | The group repository is reachable and the final files are committed locally. Publishing depends on repository write access. |
+| GitHub | Implemented | The group repository and Git commit history record the source, integration and final submission updates. |
 | Documentation | Implemented | English README, setup and verification steps, CATS instructions, and task distribution. |
 | Good code | Implemented | Typed analysis functions, Grafana plugin boundaries, lint and type checks, and targeted tests. |
 | WebSocket | Implemented | The Live chart received multiple timestamped TestData publications through Grafana Live. |
